@@ -18,8 +18,15 @@
 			isScrolled = window.scrollY > 50;
 		};
 
+		// Run once on mount to set initial state
+		handleScroll();
+
 		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
+		window.addEventListener('hashchange', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+			window.removeEventListener('hashchange', handleScroll);
+		};
 	});
 
 	function scrollToSection(href:string) {
@@ -28,6 +35,9 @@
 		if (element) {
 			element.scrollIntoView({ behavior: 'smooth' });
 			isMobileMenuOpen = false;
+			setTimeout(() => {
+				window.location.hash = `${href}`;
+			}, 500);
 		}
 	}
 </script>
