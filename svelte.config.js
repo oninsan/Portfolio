@@ -9,7 +9,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			base: ''
+			base: '/Portfolio'
 		},
 		prerender: {
 			crawl: true,
