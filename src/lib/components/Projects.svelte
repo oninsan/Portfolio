@@ -7,6 +7,7 @@
   import resumeMaker from '$lib/assets/images/resume-maker.png';
   import oalm from '$lib/assets/images/lm-archive.png'
   import chitchat from '$lib/assets/images/chitchat.png'
+  import devPortfolio from '$lib/assets/images/devPortfolio.png'
 	
 	let projectsElement:Element;
 	let activeFilter = 'All';
@@ -53,6 +54,16 @@
 			category: 'Svelte',
 			liveUrl: '#',
 			githubUrl: '#'
+		},
+    {
+			id: 5,
+			title: 'DevPortfolio',
+			description: 'My personal portfolio app that showcases my latest project. It also has my public information for the clients to reachout me whenever they want.',
+			image: devPortfolio,
+			technologies: ['Svelte'],
+			category: 'Svelte',
+			liveUrl: '#',
+			githubUrl: 'https://github.com/oninsan/Portfolio'
 		},
 	];
 	
