@@ -6,11 +6,11 @@
 	let isMobileMenuOpen = $state(false);
 
 	const navItems = [
-		{ href: '#home', label: 'Home' },
-		{ href: '#about', label: 'About' },
-		{ href: '#skills', label: 'Skills' },
-		{ href: '#projects', label: 'Projects' },
-		{ href: '#contact', label: 'Contact' }
+		{ href: '/', label: 'Home' },
+		{ href: '/About', label: 'About' },
+		{ href: '/Skills', label: 'Skills' },
+		{ href: '/Projects', label: 'Projects' },
+		{ href: '/Contact', label: 'Contact' }
 	];
 
 	onMount(() => {
@@ -44,17 +44,18 @@
 
 			<!-- Desktop Navigation -->
 			<div class="hidden md:block">
-				<div class="ml-10 flex items-baseline space-x-8">
-					{#each navItems as item}
-						<button
-							onclick={() => scrollToSection(item.href)}
-							class="px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-primary {isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-primary'}"
-						>
-							{item.label}
-						</button>
-					{/each}
-				</div>
-			</div>
+        <div class="ml-10 flex items-baseline space-x-8">
+          {#each navItems as item}
+            <a
+              href={item.href}
+              class="px-3 py-2 text-sm font-medium transition-colors duration-200 hover:text-primary {isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-primary'}"
+              onclick={() => isMobileMenuOpen = false}
+            >
+              {item.label}
+            </a>
+          {/each}
+        </div>
+      </div>
 
 			<!-- Mobile menu button -->
 			<div class="md:hidden">
@@ -72,19 +73,22 @@
 		</div>
 
 		<!-- Mobile Navigation -->
-		{#if isMobileMenuOpen}
-			<div class="md:hidden">
-				<div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-sm rounded-lg mt-2 shadow-lg">
-					{#each navItems as item}
-						<button
-							onclick={() => scrollToSection(item.href)}
-							class="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200"
-						>
-							{item.label}
-						</button>
-					{/each}
-				</div>
-			</div>
-		{/if}
+		<!-- ...existing code... -->
+    {#if isMobileMenuOpen}
+        <div class="md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-sm rounded-lg mt-2 shadow-lg">
+                {#each navItems as item}
+                    <a
+                        href={item.href}
+                        class="block w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 rounded-md transition-colors duration-200"
+                        onclick={() => isMobileMenuOpen = false}
+                    >
+                        {item.label}
+                    </a>
+                {/each}
+            </div>
+        </div>
+    {/if}
+<!-- ...existing code... -->
 	</nav>
 </header>

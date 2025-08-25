@@ -11,7 +11,6 @@
 			entries.forEach((entry) => {
 				if (entry.isIntersecting) {
 					entry.target.classList.add('animate-slide-up');
-          window.location.hash = 'about'  
 				}
 			});
 		});
