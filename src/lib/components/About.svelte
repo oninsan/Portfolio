@@ -36,7 +36,7 @@
 						Hello! I'm a Web Developer passionate about creating digital solutions.
 					</h3>
 					<p class="text-gray-600 leading-relaxed">
-						With over 3 years of experience in web development, I've had the privilege of working 
+						With over 4 years of experience in web development, I've had the privilege of working 
 						on diverse projects ranging from small business websites to large-scale web applications. 
 						My journey started with a curiosity about how websites work, and it has evolved into a 
 						passion for creating seamless user experiences.
