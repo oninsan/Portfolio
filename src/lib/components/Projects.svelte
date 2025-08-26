@@ -12,7 +12,7 @@
 	let projectsElement:Element;
 	let activeFilter = 'All';
 	
-	const filters = ['All', 'React', 'Vue.js', 'Svelte', 'Full Stack'];
+	const filters = ['All', 'React', 'Svelte', 'Full Stack'];
 	
 	const projects = [
     {
