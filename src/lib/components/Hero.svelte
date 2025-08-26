@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { ChevronDown } from 'lucide-svelte';
-  import profilePic from '$lib/assets/images/profile.png'
+  import profilePic from '$lib/assets/profile.png'
 	
 	let heroElement:Element;
 	

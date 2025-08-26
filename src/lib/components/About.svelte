@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import Card from './ui/Card.svelte';
 	import { User, Calendar, MapPin, Mail } from 'lucide-svelte';
-	import profilePic from '$lib/assets/images/profile.png';
+	import profilePic from '$lib/assets/profile.png';
 	
 	let aboutElement: Element;
 	
