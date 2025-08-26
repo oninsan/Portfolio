@@ -1,5 +1,14 @@
 <script lang="ts">
 	import { Heart } from 'lucide-svelte';
+  const scrollToSection = (href:string)=> {
+		const element = document.getElementById(href);
+		if (element) {
+			element.scrollIntoView({ behavior: 'smooth' });
+			setTimeout(() => {
+				window.location.hash = `${href}`;
+			}, 500);
+		}
+	}
 </script>
 
 <footer class="bg-gray-900 text-white py-12">
@@ -40,7 +49,7 @@
 				<ul class="space-y-2">
 					<li>
 						<button 
-							onclick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
+							onclick={() => scrollToSection('home')}
 							class="text-gray-300 hover:text-primary transition-colors duration-200"
 						>
 							Home
@@ -48,7 +57,7 @@
 					</li>
 					<li>
 						<button 
-							onclick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+							onclick={() => scrollToSection('about')}
 							class="text-gray-300 hover:text-primary transition-colors duration-200"
 						>
 							About
@@ -56,7 +65,7 @@
 					</li>
 					<li>
 						<button 
-							onclick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
+							onclick={() => scrollToSection('skills')}
 							class="text-gray-300 hover:text-primary transition-colors duration-200"
 						>
 							Skills
@@ -64,7 +73,7 @@
 					</li>
 					<li>
 						<button 
-							onclick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+							onclick={() => scrollToSection('projects')}
 							class="text-gray-300 hover:text-primary transition-colors duration-200"
 						>
 							Projects
@@ -72,7 +81,7 @@
 					</li>
 					<li>
 						<button 
-							onclick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+							onclick={() => scrollToSection('contact')}
 							class="text-gray-300 hover:text-primary transition-colors duration-200"
 						>
 							Contact
