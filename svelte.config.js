@@ -9,7 +9,7 @@ const config = {
 			fallback: 'index.html'
 		}),
 		paths: {
-			base: '/Portfolio'
+			base: process.env.NODE_ENV === 'development' ? '' : '/Portfolio'
 		},
 		prerender: {
 			crawl: true,
