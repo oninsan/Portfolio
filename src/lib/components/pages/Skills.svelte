@@ -5,32 +5,8 @@
 	import CardContent from '../ui/CardContent.svelte';
 	import CardHeader from '../ui/CardHeader.svelte';
 	import CardTitle from '../ui/CardTitle.svelte';
-
-  
-  const skillCategories: Array<{ title: string; skills: string[] }> = [
-    {
-      title: 'Frontend',
-			skills: [
-        'React', 'Next.js', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 
-				'Tailwind CSS', 'Sass', 'Vue.js', 'Angular'
-			]
-		},
-		{
-      title: 'Backend',
-			skills: [
-        'Node.js', 'Express.js', 'Python', 'Django', 'Flask', 'PostgreSQL', 
-				'MongoDB', 'MySQL', 'REST APIs', 'GraphQL'
-			]
-		},
-		{
-      title: 'Tools & Others',
-			skills: [
-        'Git', 'Docker', 'AWS', 'Firebase', 'Vercel', 'Figma', 'Adobe XD', 
-				'Jest', 'Cypress', 'Webpack'
-			]
-		}
-	];
-  
+  import { skills } from '$lib/data/skills';
+  import { skillCategories } from '$lib/data/skillCategory';  
   let skillsElement:Element;
   onMount(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -57,20 +33,22 @@
 		</div>
 
 		<div class="grid md:grid-cols-3 gap-8">
-			{#each skillCategories as category, index}
+			{#each skillCategories as category, index (category.id)}
 				<Card className="border-none shadow-sm">
 					<CardHeader>
 						<CardTitle className="text-center">{category.title}</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<div class="flex flex-wrap gap-2 justify-center">
-							{#each category.skills as skill, skillIndex}
-								<Badge 
-									variant="secondary"
-									className="text-sm py-1 px-3"
-								>
-									{skill}
-								</Badge>
+							{#each skills as skill, id (skill.id)}
+                {#if skill.category == category.title}
+                  <Badge 
+                    variant="secondary"
+                    className="text-sm py-1 px-3"
+                  >
+                    {skill.skill}
+                  </Badge>
+                {/if}
 							{/each}
 						</div>
 					</CardContent>

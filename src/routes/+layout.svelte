@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 	import favicon from '$lib/assets/icon.svg';
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
+	import Header from '$lib/components/pages/Header.svelte';
+	import Footer from '$lib/components/pages/Footer.svelte';
 
 	let { children } = $props();
 </script>
