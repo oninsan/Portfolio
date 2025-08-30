@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Badge from './ui/Badge.svelte';
-	import Card from './ui/Card.svelte';
-	import CardContent from './ui/CardContent.svelte';
-	import CardHeader from './ui/CardHeader.svelte';
-	import CardTitle from './ui/CardTitle.svelte';
+	import Badge from '../ui/Badge.svelte';
+	import Card from '../ui/Card.svelte';
+	import CardContent from '../ui/CardContent.svelte';
+	import CardHeader from '../ui/CardHeader.svelte';
+	import CardTitle from '../ui/CardTitle.svelte';
 
   
   const skillCategories: Array<{ title: string; skills: string[] }> = [

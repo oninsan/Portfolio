@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Card from './ui/Card.svelte';
-	import Input from './ui/Input.svelte';
-	import Label from './ui/Label.svelte';
-	import Textarea from './ui/Textarea.svelte';
+	import Card from '../ui/Card.svelte';
+	import Input from '../ui/Input.svelte';
+	import Label from '../ui/Label.svelte';
+	import Textarea from '../ui/Textarea.svelte';
 	import { Mail, Phone, MapPin, Send, MessageCircle } from 'lucide-svelte';
 	
 	let contactElement:Element;

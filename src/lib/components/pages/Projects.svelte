@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Card from './ui/Card.svelte';
-	import Badge from './ui/Badge.svelte';
+	import Card from '../ui/Card.svelte';
+	import Badge from '../ui/Badge.svelte';
 	import { ExternalLink, Github, Eye } from 'lucide-svelte';
   import { projects } from '$lib/data/project';
 	
